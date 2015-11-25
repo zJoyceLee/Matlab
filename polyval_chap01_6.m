@@ -7,6 +7,8 @@
    cube_value = value.^3
    square_value = value.^2
    result_p = cube_value -3 * square_value + 3 * value - 1
+   % p = [1 -3 3 -1]
+   % poly2spm(p)
    end
 
    function result_q = Q(value)
@@ -19,4 +21,9 @@
 % -------------------------------------------------
 % (a) x = 2.72  four rounding
    value = 2.72
+   result = [P(value), Q(value), R(value)]
+
+% -------------------------------------------------
+% (b) x = 0.975 four rounding
+   value = 0.975
    result = [P(value), Q(value), R(value)]
