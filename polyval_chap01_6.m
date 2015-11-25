@@ -2,24 +2,21 @@
 % Q(x) = ((x - 3) * x + 3) * x - 1
 % R(x) = (x - 1)^3
 % -------------------------------------------------
-   function [result_p] = P(value_p)
-   result_p = value_p.^3 -3 * value_p.^2 + 3 * value_p - 1
+   function result_p = P(value)
+   output_precision (4)
+   cube_value = value.^3
+   square_value = value.^2
+   result_p = cube_value -3 * square_value + 3 * value - 1
    end
 
-   function [result_q] = Q(value_q)
-   result_q = ((value_q - 3) * value_q + 3) * value_q -1
+   function result_q = Q(value)
+   result_q = ((value - 3) * value + 3) * value -1
    end
 
-   function [result_r] = R(value_r)
-   result_r = (value_r - 1).^3
+   function result_r = R(value)
+   result_r = (value - 1).^3
    end
 % -------------------------------------------------
 % (a) x = 2.72  four rounding
-   value_p = 2.72
-   result_p = P(value_p)
-
-   value_q = 2.72
-   result_q = Q(value_q)
-
-   value_r = 2.72
-   result_r = R(value_r)
+   value = 2.72
+   result = [P(value), Q(value), R(value)]
